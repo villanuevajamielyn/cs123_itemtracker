@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Item Tracker</string>
+    <string name="title_activity_category">Categories</string>
+    <string name="title_activity_main">All Items</string>
+    <string name="title_activity_addItem">Add Item</string>
+    <string name="title_activity_viewItem">Viewing Item</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Item Tracker</string>
+    <string name="nav_header_subtitle"></string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_categories">Categories</string>
+    <string name="menu_itemList">List of Items</string>
+    <string name="menu_GPS">GPS</string>
+    <string name="menu_location">Location History</string>
+    <string name="menu_settings">Settings</string>
+</resources>
