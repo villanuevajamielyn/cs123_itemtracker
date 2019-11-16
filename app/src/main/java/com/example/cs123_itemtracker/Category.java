@@ -1,7 +1,5 @@
 package com.example.cs123_itemtracker;
 
-import java.util.ArrayList;
-
 import io.realm.RealmObject;
 
 public class Category extends RealmObject {
@@ -44,5 +42,15 @@ public class Category extends RealmObject {
 
     public void setLocationCategory(Boolean locationCategory) {
         this.locationCategory = locationCategory;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "categoryID='" + categoryID + '\'' +
+                ", categoryName='" + categoryName + '\'' +
+                ", locationCategory=" + locationCategory +
+                ", itemTypeCat=" + itemTypeCat +
+                '}';
     }
 }

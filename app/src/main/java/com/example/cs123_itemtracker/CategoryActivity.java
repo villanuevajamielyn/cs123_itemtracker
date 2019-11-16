@@ -33,20 +33,36 @@ import java.util.UUID;
 
 import io.realm.RealmResults;
 
-@EActivity (R.layout.activity_category)
+@EActivity (R.layout.d_activity_category)
 public class CategoryActivity extends AppCompatActivity {
+
+    @ViewById
+    RecyclerView recyclerView;
 
     public String categoryUUID;
 
+    @Bean
+    CategoryManagement cm;
+
     @AfterViews
     public void onCreate() {
+        System.out.println(cm.findAll());
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(mLayoutManager);
+
+        RealmResults<Category> catList = cm.findAll();
+        CategoryAdapter a = new CategoryAdapter(this, catList);
+        recyclerView.setAdapter(a);
+
         categoryUUID = UUID.randomUUID().toString();
         NavigationView nav = findViewById(R.id.nav_view);
         nav.setNavigationItemSelectedListener(new DrawerActivity(this));
     }
 
-    @Click(R.id.addCategory)
-    public void addCategory() {
-
+    @Click (R.id.fabCat)
+    public void click(){
+        AddCategoryActivity_.intent(this)
+                .start();
     }
 }

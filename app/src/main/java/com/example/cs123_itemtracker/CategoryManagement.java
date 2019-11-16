@@ -2,12 +2,8 @@ package com.example.cs123_itemtracker;
 
 import org.androidannotations.annotations.EBean;
 
-import java.util.Date;
-import java.util.UUID;
-
 import io.realm.Realm;
 import io.realm.RealmResults;
-
 
 @EBean
 public class CategoryManagement {
@@ -18,34 +14,37 @@ public class CategoryManagement {
         realm = Realm.getDefaultInstance();
     }
 
-    public void saveCreds (String UUID, String name){
+    public void saveCreds(String UUID, String name, Boolean locType, Boolean itemCatType){
         Category c = new Category();
         c.setCategoryID(UUID);
         c.setCategoryName(name);
+        c.setLocationCategory(locType);
+        c.setItemTypeCat(itemCatType);
         realm.beginTransaction();
-        try {
+        try{
             realm.copyToRealmOrUpdate(c);
-        } catch (Exception e){
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
-        realm.commitTransaction();
+        realm.close();
     }
 
-    public Item getCreds(String UUID){
-        Item i = realm.where(Item.class)
-                .equalTo("item_ID",UUID)
+    public Category getCreds(String UUID){
+        Category c = realm.where(Category.class)
+                .equalTo("categoryID",UUID)
                 .findFirst();
-        return i;
+        return c;
     }
 
-    public RealmResults<Item> findAll()
+    public RealmResults<Category> findAll()
     {
-        return realm.where(Item.class).findAll();
+        return realm.where(Category.class).findAll();
     }
 
-    public void delete(Item i){
+    public void delete(Category c){
         realm.beginTransaction();
-        i.deleteFromRealm();
+        c.deleteFromRealm();
         realm.commitTransaction();
     }
 
