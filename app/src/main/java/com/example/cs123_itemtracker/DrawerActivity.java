@@ -41,7 +41,8 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
             MainActivity_.intent(context)
                     .start();
         } else if (id == R.id.nav_GPS) {
-
+            ItemMapsActivity_.intent(context)
+                    .start();
         } else if (id == R.id.nav_loc) {
 
         }

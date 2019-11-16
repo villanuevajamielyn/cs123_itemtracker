@@ -6,9 +6,13 @@ import io.realm.RealmObject;
 
 public class Category extends RealmObject {
 
-    public String categoryID;
+    private String categoryID;
 
-    public String categoryName;
+    private String categoryName;
+
+    private Boolean locationCategory;
+
+    private Boolean itemTypeCat;
 
     public String getCategoryID() {
         return categoryID;
@@ -24,5 +28,21 @@ public class Category extends RealmObject {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public Boolean getItemTypeCat() {
+        return itemTypeCat;
+    }
+
+    public void setItemTypeCat(Boolean itemTypeCat) {
+        this.itemTypeCat = itemTypeCat;
+    }
+
+    public Boolean getLocationCategory() {
+        return locationCategory;
+    }
+
+    public void setLocationCategory(Boolean locationCategory) {
+        this.locationCategory = locationCategory;
     }
 }

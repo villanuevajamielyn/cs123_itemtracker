@@ -67,19 +67,11 @@
         android:layout_height="wrap_content"
         android:hint="Location" />
 
-    <EditText
-        android:id="@+id/itemLat"
+    <Button
+        android:id="@+id/currentLoc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="Latitude" />
-
-    <EditText
-        android:id="@+id/itemLong"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="Longitude" />
+        android:text="Get Current Location" />
 
     <Button
         android:id="@+id/addItem"
