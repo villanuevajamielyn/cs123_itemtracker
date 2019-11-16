@@ -27,7 +27,7 @@ public class CategoryManagement {
         catch (Exception e){
             e.printStackTrace();
         }
-        realm.close();
+        realm.commitTransaction();
     }
 
     public Category getCreds(String UUID){
